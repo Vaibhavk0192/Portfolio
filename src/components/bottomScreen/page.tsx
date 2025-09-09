@@ -53,7 +53,7 @@ function Terminal({
           : "hidden"
       }
     >
-      <div className=" flex mt-auto items-center fixed h-8 w-full bg-[var(--bg)] pl-10 pr-4 text-sm ">
+      <div className=" flex mt-auto items-center fixed h-8 w-full bg-[var(--bg)] pl-10 pr-4 text-sm border-t-1 border-secondary-bg shadow-t-2xl shadow-amber-50">
         <div className="flex-grow flex">
           {tabs.map((tab: string) => (
             <p

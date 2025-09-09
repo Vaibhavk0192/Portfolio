@@ -1,3 +1,4 @@
+import { useSelectedTab } from "@/context/selectedTabContext";
 import React from "react";
 
 interface LeftPannelProps {
@@ -5,11 +6,12 @@ interface LeftPannelProps {
 }
 
 function LeftPannel({ leftPageToggle }: LeftPannelProps) {
+  const { activeId } = useSelectedTab();
   return (
     <>
       <p
         className={
-          leftPageToggle
+          leftPageToggle && activeId
             ? "flex flex-col w-6  items-center content-center mt-18 ml-5 pl-1 text-end overflow-y-hidden h-[calc(100vh-11vh)]"
             : "hidden w-6  justify-center items-center content-center mt-18 ml-5 pl-1 text-end"
         }

@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar/page";
 import Pages from "@/components/pages/page";
 import RightPannel from "@/components/rightPannel/page";
 import { usePanel } from "@/context/panelContext";
+import { useSelectedTab } from "@/context/selectedTabContext";
 import { useState } from "react";
 
 export default function Home() {
@@ -17,10 +18,11 @@ export default function Home() {
     setRightOpen,
     setLeftOpen,
   } = usePanel();
+  const {activeId}=useSelectedTab();
   return (
     <>
       <Navbar />
-      <main className="flex m-auto w-full">
+      <main className={`flex m-auto w-full ${!activeId&&"bg-bg"}`}>
         <LeftPannel leftPageToggle={leftOpen} />
         <Pages />
         {rightOpen && <RightPannel />}

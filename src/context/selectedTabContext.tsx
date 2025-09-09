@@ -24,6 +24,14 @@ const initialState: State = {
   activeId: "1.1.1.1",
 };
 
+const intialCtx: Ctx = {
+  activeId: initialState.activeId,
+  tabs: initialState.tabs,
+  closeTab: () => {},
+  activeTab: () => {},
+  openTab: () => {},
+}
+
 function reducer(state: State, action: Action): State {
   switch (action.type) {
     case "OPEN_TAB": {
@@ -58,7 +66,7 @@ type Ctx = {
   closeTab: (id: string) => void;
 };
 
-const SelectedTabContext = createContext<Ctx | undefined>(undefined);
+const SelectedTabContext = createContext<Ctx | undefined>(intialCtx);
 
 export const SelectedTabProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

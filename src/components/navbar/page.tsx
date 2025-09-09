@@ -7,7 +7,7 @@ import { usePanel } from "@/context/panelContext";
 export default function Navbar() {
   return (
     <header>
-      <TopPannel/>
+      <TopPannel />
     </header>
   );
 }
