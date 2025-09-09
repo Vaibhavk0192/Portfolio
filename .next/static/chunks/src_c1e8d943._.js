@@ -340,31 +340,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 function LeftPannel(param) {
     let { leftPageToggle } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: leftPageToggle ? "text-foreground flex  flex-col h-screen w-[1.2vw] overflow-hidden align-center text-center pt-16 ml-2 leading-5" : "hidden",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: leftPageToggle ? "" : "display fixed text-xs",
-                    children: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/leftPannel/page.tsx",
-                    lineNumber: 17,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/components/leftPannel/page.tsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: leftPageToggle ? "h-screen w-[0.08px] text-black ml-6 opacity-10 absolute -z-10" : ""
-            }, void 0, false, {
-                fileName: "[project]/src/components/leftPannel/page.tsx",
-                lineNumber: 22,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true);
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: leftPageToggle ? "flex flex-col w-6  items-center content-center mt-18 ml-5 pl-1 text-end overflow-y-hidden h-[calc(100vh-11vh)]" : "hidden w-6  justify-center items-center content-center mt-18 ml-5 pl-1 text-end",
+            children: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44"
+        }, void 0, false, {
+            fileName: "[project]/src/components/leftPannel/page.tsx",
+            lineNumber: 10,
+            columnNumber: 7
+        }, this)
+    }, void 0, false);
 }
 _c = LeftPannel;
 const __TURBOPACK__default__export__ = LeftPannel;
@@ -471,6 +455,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ico
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$bottomScreen$2f$logToTerminal$2f$logToTerminal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/bottomScreen/logToTerminal/logToTerminal.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navbar$2f$topPannel$2f$topbarTab$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/navbar/topPannel/topbarTab/page.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$selectedTabContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/selectedTabContext.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$panelContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/panelContext.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 ;
@@ -482,8 +467,10 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function TopPannel(topPannelProps) {
+;
+function TopPannel() {
     _s();
+    const { leftOpen, rightOpen, bottomOpen, setBottomOpen, setRightOpen, setLeftOpen } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$panelContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePanel"])();
     const { tabs } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$selectedTabContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelectedTab"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex flex-col w-screen bg-bg absolute  rounded-t-xl  shadow-xs shadow-bg",
@@ -498,27 +485,27 @@ function TopPannel(topPannelProps) {
                                 className: "h-2.5 w-2.5 bg-red-500 rounded-4xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                lineNumber: 26,
+                                lineNumber: 35,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "h-2.5 w-2.5 bg-yellow-400 rounded-4xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                lineNumber: 27,
+                                lineNumber: 36,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "h-2.5 w-2.5 bg-green-700 rounded-4xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                lineNumber: 28,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                        lineNumber: 25,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -526,7 +513,7 @@ function TopPannel(topPannelProps) {
                         children: "Vaibhav Kapoor - Portfolio"
                     }, void 0, false, {
                         fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                        lineNumber: 30,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -535,84 +522,84 @@ function TopPannel(topPannelProps) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 onClick: ()=>{
                                     (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$bottomScreen$2f$logToTerminal$2f$logToTerminal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["logToTerminal"])("left pannel toggle clicked!");
-                                    topPannelProps.setLeftPannelToggle(!topPannelProps.leftPannelToggle);
+                                    setLeftOpen(!leftOpen);
                                 },
-                                children: topPannelProps.leftPannelToggle ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiSolidDockLeft"], {
+                                children: leftOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiSolidDockLeft"], {
                                     className: "text-white text-lg flex "
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 50,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiDockLeft"], {
                                     className: "text-white text-lg flex"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 52,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                lineNumber: 34,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "cursor-pointer",
                                 onClick: ()=>{
                                     (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$bottomScreen$2f$logToTerminal$2f$logToTerminal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["logToTerminal"])("bottom pannel toggle clicked!");
-                                    topPannelProps.setBottomPannelToggle(!topPannelProps.bottomPannelToggle);
+                                    setBottomOpen(!bottomOpen);
                                 },
-                                children: topPannelProps.bottomPannelToggle ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiSolidDockBottom"], {
+                                children: bottomOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiSolidDockBottom"], {
                                     className: "text-white text-lg  flex"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 63,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiDockBottom"], {
                                     className: "text-white text-lg  flex"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 65,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                lineNumber: 48,
+                                lineNumber: 55,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "cursor-pointer",
                                 onClick: ()=>{
-                                    topPannelProps.setRightPannelToggle(!topPannelProps.rightPannelToggle);
+                                    setRightOpen(!rightOpen);
                                     (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$bottomScreen$2f$logToTerminal$2f$logToTerminal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["logToTerminal"])("right pannel toggle clicked!");
                                 },
-                                children: !topPannelProps.rightPannelToggle ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiDockRight"], {
+                                children: !rightOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiDockRight"], {
                                     className: "text-white text-lg  flex"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 76,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BiSolidDockRight"], {
                                     className: "text-white text-lg  flex"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 78,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                                lineNumber: 63,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                        lineNumber: 33,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                lineNumber: 24,
+                lineNumber: 33,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -623,23 +610,24 @@ function TopPannel(topPannelProps) {
                         icons: tab.icon
                     }, tab.id, false, {
                         fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                        lineNumber: 82,
+                        lineNumber: 85,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-                lineNumber: 80,
+                lineNumber: 83,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/navbar/topPannel/page.tsx",
-        lineNumber: 23,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }
-_s(TopPannel, "FzmPEd9GrGybeGSaKB1QXIF76ts=", false, function() {
+_s(TopPannel, "E9pLiFHt0QkkhTQXnJtQbY3Qmoc=", false, function() {
     return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$panelContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePanel"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$selectedTabContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelectedTab"]
     ];
 });
@@ -660,38 +648,23 @@ __turbopack_context__.s({
     "default": ()=>Navbar
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navbar$2f$topPannel$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/navbar/topPannel/page.tsx [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 function Navbar() {
-    _s();
-    const [leftPannelToggle, setLeftPannelToggle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [bottomPannelToggle, setBottomPannelToggle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [rightPannelToggle, setRightPannelToggle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navbar$2f$topPannel$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-            leftPannelToggle: leftPannelToggle,
-            setLeftPannelToggle: setLeftPannelToggle,
-            bottomPannelToggle: bottomPannelToggle,
-            setBottomPannelToggle: setBottomPannelToggle,
-            rightPannelToggle: rightPannelToggle,
-            setRightPannelToggle: setRightPannelToggle
-        }, void 0, false, {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navbar$2f$topPannel$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
             fileName: "[project]/src/components/navbar/page.tsx",
-            lineNumber: 15,
+            lineNumber: 10,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/navbar/page.tsx",
-        lineNumber: 14,
+        lineNumber: 9,
         columnNumber: 5
     }, this);
 }
-_s(Navbar, "zNxESbwCMUIADYsxfxIZErTR8Ck=");
 _c = Navbar;
 var _c;
 __turbopack_context__.k.register(_c, "Navbar");
@@ -711,7 +684,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function Pages() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mt-20 flex w-[78.8vw] px-10"
+        className: "mt-20 flex-5 min-w-[78.8vw] px-10"
     }, void 0, false, {
         fileName: "[project]/src/components/pages/page.tsx",
         lineNumber: 2,
@@ -945,7 +918,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$files$
 const RightPannel = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex flex-col h-screen w-[20vw] ml-auto z-5 relative shadow-sm shadow-bg pt-8",
+            className: "flex flex-2 flex-col h-screen  min-w-fit] w-[18vw]  ml-auto z-5 relative shadow-sm shadow-bg pt-8",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "text-highlight-green text-xs flex w-[10vw] px-4 py-2",
@@ -1032,7 +1005,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$leftPan
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navbar$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/navbar/page.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pages$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/pages/page.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$rightPannel$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/rightPannel/page.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$panelContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/panelContext.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -1044,60 +1017,62 @@ var _s = __turbopack_context__.k.signature();
 ;
 function Home() {
     _s();
-    const [leftPannelToggle, setLeftPannelToggle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [bottomPannelToggle, setBottomPannelToggle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [rightPannelToggle, setRightPannelToggle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const { leftOpen, rightOpen, bottomOpen, setBottomOpen, setRightOpen, setLeftOpen } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$panelContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePanel"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$navbar$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 16,
+                lineNumber: 22,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                className: "flex m-auto",
+                className: "flex m-auto w-full",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$leftPannel$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        leftPageToggle: leftPannelToggle
+                        leftPageToggle: leftOpen
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 18,
+                        lineNumber: 24,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pages$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 19,
+                        lineNumber: 25,
                         columnNumber: 9
                     }, this),
-                    rightPannelToggle && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$rightPannel$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    rightOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$rightPannel$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 20,
-                        columnNumber: 31
+                        lineNumber: 26,
+                        columnNumber: 23
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 17,
+                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$bottomScreen$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    bottomPannelToggle: bottomPannelToggle,
-                    setBottomPannelToggle: setBottomPannelToggle
+                    bottomPannelToggle: bottomOpen,
+                    setBottomPannelToggle: setBottomOpen
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 23,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 22,
+                lineNumber: 28,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
-_s(Home, "zNxESbwCMUIADYsxfxIZErTR8Ck=");
+_s(Home, "P8EOXnkykiM0TVh54UgLwU8wLoo=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$panelContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePanel"]
+    ];
+});
 _c = Home;
 var _c;
 __turbopack_context__.k.register(_c, "Home");

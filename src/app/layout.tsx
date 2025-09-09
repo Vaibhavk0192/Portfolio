@@ -3,6 +3,7 @@ import "./globals.css";
 import { LogsProvider } from "@/context/logContext";
 import { SelectedFolderProvider } from "@/context/selectedFolderContext";
 import { SelectedTabProvider } from "@/context/selectedTabContext";
+import { PanelProvider } from "@/context/panelContext";
 
 export const metadata: Metadata = {
   title: "Vaibhav Kapoor",
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SelectedTabProvider>
-          <SelectedFolderProvider>
-            <LogsProvider>{children}</LogsProvider>
-          </SelectedFolderProvider>
-        </SelectedTabProvider>
+        <PanelProvider>
+          <SelectedTabProvider>
+            <SelectedFolderProvider>
+              <LogsProvider>{children}</LogsProvider>
+            </SelectedFolderProvider>
+          </SelectedTabProvider>
+        </PanelProvider>
       </body>
     </html>
   );
