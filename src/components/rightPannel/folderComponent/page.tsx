@@ -42,7 +42,7 @@ const FolderComponent = ({
   const Icon = icon === "folder" ? (isOpen ? FaFolderOpen : FaFolder) : icon;
 
   return (
-    <div className="pl-2 w-full">
+    <div className="pl-2 w-full ">
       <div
         className={` h-4 w-full flex text-[0.8rem] items-center p-1  mt-0.5 cursor-pointer hover:bg-indigo-300/10 rounded ${
           selectedFile === title
