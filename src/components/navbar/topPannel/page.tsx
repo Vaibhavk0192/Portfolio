@@ -16,8 +16,17 @@ import { BiSolidDockRight } from "react-icons/bi";
 import { logToTerminal } from "../../bottomScreen/logToTerminal/logToTerminal";
 import TopbarTab from "./topbarTab/page";
 import { useSelectedTab } from "@/context/selectedTabContext";
+import { usePanel } from "@/context/panelContext";
 
-function TopPannel(topPannelProps: TopPannelProps) {
+function TopPannel() {
+  const {
+    leftOpen,
+    rightOpen,
+    bottomOpen,
+    setBottomOpen,
+    setRightOpen,
+    setLeftOpen,
+  } = usePanel();
   const { tabs } = useSelectedTab();
   return (
     <div className="flex flex-col w-screen bg-bg absolute  rounded-t-xl  shadow-xs shadow-bg">
@@ -34,12 +43,10 @@ function TopPannel(topPannelProps: TopPannelProps) {
           <div
             onClick={() => {
               logToTerminal("left pannel toggle clicked!");
-              topPannelProps.setLeftPannelToggle(
-                !topPannelProps.leftPannelToggle
-              );
+              setLeftOpen(!leftOpen);
             }}
           >
-            {topPannelProps.leftPannelToggle ? (
+            {leftOpen ? (
               <BiSolidDockLeft className="text-white text-lg flex " />
             ) : (
               <BiDockLeft className="text-white text-lg flex" />
@@ -49,12 +56,10 @@ function TopPannel(topPannelProps: TopPannelProps) {
             className="cursor-pointer"
             onClick={() => {
               logToTerminal("bottom pannel toggle clicked!");
-              topPannelProps.setBottomPannelToggle(
-                !topPannelProps.bottomPannelToggle
-              );
+              setBottomOpen(!bottomOpen);
             }}
           >
-            {topPannelProps.bottomPannelToggle ? (
+            {bottomOpen ? (
               <BiSolidDockBottom className="text-white text-lg  flex" />
             ) : (
               <BiDockBottom className="text-white text-lg  flex" />
@@ -63,13 +68,11 @@ function TopPannel(topPannelProps: TopPannelProps) {
           <div
             className="cursor-pointer"
             onClick={() => {
-              topPannelProps.setRightPannelToggle(
-                !topPannelProps.rightPannelToggle
-              );
+              setRightOpen(!rightOpen);
               logToTerminal("right pannel toggle clicked!");
             }}
           >
-            {!topPannelProps.rightPannelToggle ? (
+            {!rightOpen ? (
               <BiDockRight className="text-white text-lg  flex" />
             ) : (
               <BiSolidDockRight className="text-white text-lg  flex" />
