@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///H:/web_dev/PortfolioCodeEditor/portfolio/src/components/navbar/page.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport Terminal from \"../bottomScreen/page\";\r\nimport LeftPannel from \"../leftPannel/page\";\r\nimport TopPannel from \"./topPannel/page\";\r\nimport RightPannel from \"../rightPannel/page\";\r\n\r\nexport default function Navbar() {\r\n\r\n  return (\r\n    <header>\r\n      \r\n    </header>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAQe,SAAS;IAEtB,qBACE,6LAAC;;;;;AAIL;KAPwB","debugId":null}}]
-}
