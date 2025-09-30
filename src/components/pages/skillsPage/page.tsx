@@ -11,32 +11,35 @@ function Skills() {
   );
 
   return (
-    <div className="text-white py-4">
-      <div className="flex">
+    <div className="text-white py-8">
+
+      {/* Tabs */}
+      <div className="flex justify-center gap-6 mb-12">
         {skillSections.map((section) => (
           <button
             key={section.id}
             onClick={() => setActiveTab(section.id)}
-            className={`flex max-w-fit  transition h-full pb-10 text-sm under ${
+            className={`px-2 py-2 rounded-md font-medium text-sm transition-all duration-300 ${
               activeTab === section.id
-                ? " text-highlight-green underline underline-offset-10 "
-                : "bg-secondary-bg text-gray-300 hover:text-highlight-green"
+                ? "bg-highlight-green text-black shadow-lg"
+                : "bg-secondary-bg text-gray-300 hover:text-highlight-green hover:bg-bg/60"
             }`}
           >
-            <p className="pr-4">{section.title}</p>
+            {section.title}
           </button>
         ))}
       </div>
 
-      {/* Active Skills */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 justify-items-center">
         {activeSection?.skills.map((skill) => (
           <div
             key={skill.name}
-            className="flex flex-col min-w-36 w-fit items-center justify-center gap-2 p-4 bg-bg rounded-2xl hover:scale-105 transition-transform"
+            className="flex flex-col w-36 text-center items-center justify-center gap-2 p-6 bg-bg rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
-            <Image src={skill.icon} alt={skill.name} width={50} height={50} />
-            <p className="mt-2 text-sm">{skill.name}</p>
+            <Image src={skill.icon} alt={skill.name} width={55} height={55} />
+            <p className="mt-2 text-sm font-medium text-gray-200">
+              {skill.name}
+            </p>
           </div>
         ))}
       </div>
