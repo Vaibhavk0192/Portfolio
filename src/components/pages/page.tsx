@@ -4,21 +4,20 @@ import Skills from "./skillsPage/page";
 import Contact from "./contactPage/page";
 import Experience from "./experiencePage/page";
 import NoTabSelected from "./noTabSelectedPage/page";
+import Projects from "./ProjectsPage/page";
 
 function Pages() {
   const { activeId } = useSelectedTab();
 
-  console.log(activeId);
-
   return (
-    <div className="mt-20 flex-5 min-w-[78.8vw] px-10 h-full">
+    <div className="pt-20 flex-1 min-w-[78.8vw] h-[calc(100vh-5rem)] overflow-y-auto px-10">
       {activeId ? (
         activeId === "1.1.1.1" ? (
           <Home />
         ) : activeId === "1.1.2.1" ? (
           <Skills />
         ) : activeId === "1.1.3.1" ? (
-          <Experience />
+          <Projects />
         ) : activeId === "1.1.4.1" ? (
           <Contact />
         ) : (

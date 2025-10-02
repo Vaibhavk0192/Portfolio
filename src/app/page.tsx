@@ -7,7 +7,6 @@ import Pages from "@/components/pages/page";
 import RightPannel from "@/components/rightPannel/page";
 import { usePanel } from "@/context/panelContext";
 import { useSelectedTab } from "@/context/selectedTabContext";
-import { useState } from "react";
 
 export default function Home() {
   const {
