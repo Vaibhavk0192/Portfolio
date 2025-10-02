@@ -12,7 +12,7 @@ import {
 
 function HomePage() {
   return (
-    <div className="overflow-y-scroll h-[80vh] w-full">
+    <div className=" h-full w-full">
       <div className="flex items-center justify-around">
         {/* Left Section - Text */}
         <div className="max-w-xl">
