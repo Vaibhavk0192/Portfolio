@@ -1,4 +1,5 @@
 import { FaReact } from "react-icons/fa";
+
 export const files = [
   {
     id: "1",
@@ -48,11 +49,23 @@ export const files = [
           },
           {
             id: "1.1.4",
-            title: "Contact",
+            title: "Experience",
             icon: "folder",
             children: [
               {
                 id: "1.1.4.1",
+                title: "Experience.jsx",
+                icon: FaReact,
+              },
+            ],
+          },
+          {
+            id: "1.1.5",
+            title: "Contact",
+            icon: "folder",
+            children: [
+              {
+                id: "1.1.5.1",
                 title: "Contact.jsx",
                 icon: FaReact,
               },

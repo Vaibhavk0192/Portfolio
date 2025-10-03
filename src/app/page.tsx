@@ -21,9 +21,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className={`flex m-auto w-full ${!activeId&&"bg-bg"}`}>
+      <main className={`flex m-auto w-full ${!activeId&&"bg-bg"} ${!bottomOpen?"h-[100vh]":"h-[75vh]"}`}>
         <LeftPannel leftPageToggle={leftOpen} />
-        <Pages />
+        <Pages  bottomPannelToggle={bottomOpen}/>
         {rightOpen && <RightPannel />}
       </main>
       <footer>
