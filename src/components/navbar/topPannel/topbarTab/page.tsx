@@ -1,3 +1,4 @@
+import { useFolder } from "@/context/selectedFolderContext";
 import { useSelectedTab } from "@/context/selectedTabContext";
 import { useEffect } from "react";
 import { IoIosClose } from "react-icons/io";
@@ -10,6 +11,7 @@ interface topbarPropsType {
 
 function TopbarTab(topbarProps: topbarPropsType) {
   const { activeId, activeTab, closeTab } = useSelectedTab();
+  const { setSelectedFile } = useFolder();
   const isactive = activeId === topbarProps.id;
 
   return (
@@ -18,7 +20,10 @@ function TopbarTab(topbarProps: topbarPropsType) {
     border-r-text-gray/20 flex justify-between hover:cursor-pointer rounded-tr-md rounded-t-sm ${
       isactive && "bg-secondary-bg"
     }`}
-      onClick={() => activeTab(topbarProps.id)}
+      onClick={() => {
+        activeTab(topbarProps.id);
+        setSelectedFile(topbarProps.title);
+      }}
     >
       <div className=" flex overflow-x-clip mr-2">
         <topbarProps.icons className="text-blue-400 mr-2" />
