@@ -1,4 +1,10 @@
-import { FaReact } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaEnvelope,
+  FaHome,
+  FaProjectDiagram,
+  FaTools,
+} from "react-icons/fa";
 
 export const files = [
   {
@@ -18,8 +24,8 @@ export const files = [
             children: [
               {
                 id: "1.1.1.1",
-                title: "Home.jsx",
-                icon: FaReact,
+                title: "Home",
+                icon: FaHome,
               },
             ],
           },
@@ -30,8 +36,8 @@ export const files = [
             children: [
               {
                 id: "1.1.2.1",
-                title: "Skill.jsx",
-                icon: FaReact,
+                title: "Skills",
+                icon: FaTools,
               },
             ],
           },
@@ -42,8 +48,8 @@ export const files = [
             children: [
               {
                 id: "1.1.3.1",
-                title: "Projects.jsx",
-                icon: FaReact,
+                title: "Projects",
+                icon: FaProjectDiagram,
               },
             ],
           },
@@ -54,8 +60,8 @@ export const files = [
             children: [
               {
                 id: "1.1.4.1",
-                title: "Experience.jsx",
-                icon: FaReact,
+                title: "Experience",
+                icon: FaBriefcase,
               },
             ],
           },
@@ -66,8 +72,8 @@ export const files = [
             children: [
               {
                 id: "1.1.5.1",
-                title: "Contact.jsx",
-                icon: FaReact,
+                title: "Contact",
+                icon: FaEnvelope,
               },
             ],
           },

@@ -20,7 +20,7 @@ type Action =
   | { type: "CLOSE_TAB"; id: string };
 
 const initialState: State = {
-  tabs: [{ id: "1.1.1.1", title: "Home.tsx", icon: FaReact }],
+  tabs: [{ id: "1.1.1.1", title: "Home", icon: FaReact }],
   activeId: "1.1.1.1",
 };
 

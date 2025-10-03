@@ -44,7 +44,7 @@ const FolderComponent = ({
   return (
     <div className="pl-2 w-full ">
       <div
-        className={` h-4 w-full flex text-[0.8rem] items-center p-1  mt-0.5 cursor-pointer hover:bg-indigo-300/10 rounded ${
+        className={` h-4 w-full flex text-[0.9rem]  items-center p-[0.6rem] mt-0.5   cursor-pointer hover:bg-indigo-300/10 rounded ${
           selectedFile === title
             ? "bg-indigo-300/20 text-white"
             : "text-text-gray"
