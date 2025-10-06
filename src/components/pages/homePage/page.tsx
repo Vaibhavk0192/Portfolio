@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Profile from "../../../../public/profile.png";
-import { TbBrandGithubFilled, TbLocationCode, TbMailFilled } from "react-icons/tb";
+import {
+  TbBrandGithubFilled,
+  TbLocationCode,
+  TbMailFilled,
+} from "react-icons/tb";
 import { CiLocationArrow1 } from "react-icons/ci";
 import {
   FaLinkedinIn,
@@ -35,9 +39,23 @@ function HomePage() {
               </p>
             </div>
             <div className="flex w-16 mt-1 justify-between text-highlight-green ">
-              <TbBrandGithubFilled />
-              <FaLinkedinIn />
-              <TbMailFilled />
+              <a
+                href="https://github.com/Vaibhavk0192"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <TbBrandGithubFilled />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vaibhavkapoor0192/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a href="mailto:vaibhavkapoor0192@gmail.com">
+                <TbMailFilled />
+              </a>
             </div>
           </div>
         </div>
