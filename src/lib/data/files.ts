@@ -4,6 +4,7 @@ import {
   FaHome,
   FaProjectDiagram,
   FaTools,
+  FaGraduationCap,
 } from "react-icons/fa";
 
 export const files = [
@@ -67,11 +68,23 @@ export const files = [
           },
           {
             id: "1.1.5",
-            title: "Contact",
+            title: "Education",
             icon: "folder",
             children: [
               {
                 id: "1.1.5.1",
+                title: "Education",
+                icon: FaGraduationCap,
+              },
+            ],
+          },
+          {
+            id: "1.1.6",
+            title: "Contact",
+            icon: "folder",
+            children: [
+              {
+                id: "1.1.6.1",
                 title: "Contact",
                 icon: FaEnvelope,
               },

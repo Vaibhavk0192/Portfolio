@@ -5,6 +5,7 @@ import Contact from "./contactPage/page";
 import NoTabSelected from "./noTabSelectedPage/page";
 import Projects from "./ProjectsPage/page";
 import ExperiencePage from "./experiencePage/page";
+import Education from "./educationPage/page";
 
 function Pages(bottomPannelToggle: { bottomPannelToggle: boolean }) {
   const { activeId } = useSelectedTab();
@@ -19,8 +20,10 @@ function Pages(bottomPannelToggle: { bottomPannelToggle: boolean }) {
           <Skills />
         ) : activeId === "1.1.3.1" ? (
           <Projects />
-        ) : activeId === "1.1.5.1" ? (
+        ) : activeId === "1.1.6.1" ? (
           <Contact />
+        ) : activeId === "1.1.5.1" ? (
+          <Education />
         ) : activeId === "1.1.4.1" ? (
           <ExperiencePage />
         ) : (
