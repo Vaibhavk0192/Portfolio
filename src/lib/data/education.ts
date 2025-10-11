@@ -1,4 +1,3 @@
-
 export interface EducationInterface {
   degree: string;
   institution: string;
@@ -6,26 +5,26 @@ export interface EducationInterface {
   details: string;
 }
 
-export const EducationData = [
-    {
-      degree: "Bachelor of Engineering (B.E.) in Computer Engineering",
-      institution: "Thapar Institute of Engineering & Technology, Patiala",
-      duration: "2021 – 2025",
-      details:
-        "Focused on software development, data structures, and machine learning. Worked on academic and research projects including diabetic retinopathy detection.",
-    },
-    {
-      degree: "Higher Secondary Education (Class XII)",
-      institution: "XYZ Senior Secondary School",
-      duration: "2019 – 2021",
-      details:
-        "Completed with distinction in Science stream (PCM). Developed an early interest in programming and technology.",
-    },
-    {
-      degree: "Secondary Education (Class X)",
-      institution: "ABC Public School",
-      duration: "2017 – 2019",
-      details:
-        "Built strong analytical foundations and developed interest in mathematics and computer science.",
-    },
-  ];
+export const EducationData: EducationInterface[] = [
+  {
+    degree: "Bachelor of Engineering (B.E.) in Computer Engineering",
+    institution: "Thapar Institute of Engineering & Technology, Patiala",
+    duration: "2021 – 2025",
+    details:
+      "Pursuing a comprehensive curriculum emphasizing problem-solving, analytical thinking, and engineering fundamentals. Actively engaged in academic projects and practical learning experiences.",
+  },
+  {
+    degree: "Higher Secondary Education",
+    institution: "Ryan International School, Amritsar",
+    duration: "2019 – 2021",
+    details:
+      "Completed higher secondary education in the Science stream with distinction, building a strong foundation in logical reasoning and quantitative aptitude.",
+  },
+  {
+    degree: "Secondary Education",
+    institution: "Shri Ram Ashram Public School, Amritsar",
+    duration: "2006 – 2019",
+    details:
+      "Received a well-rounded education fostering discipline, leadership, and a consistent commitment to academic excellence.",
+  },
+];
