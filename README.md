@@ -16,7 +16,6 @@ Welcome to my **personal portfolio website**! This project showcases my skills, 
 
 ## 🛠 Technology Stack
 - **Next.js**
-- **React**
 - **TypeScript**
 - **Tailwind CSS**
 
