@@ -14,7 +14,7 @@ function Skills() {
     <div className="text-white py-8">
 
       {/* Tabs */}
-      <div className="flex justify-center gap-6 mb-12">
+      <div className="flex ml-10 gap-6 mb-12">
         {skillSections.map((section) => (
           <button
             key={section.id}

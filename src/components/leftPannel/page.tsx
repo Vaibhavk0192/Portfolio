@@ -6,12 +6,11 @@ interface LeftPannelProps {
 }
 
 function LeftPannel({ leftPageToggle }: LeftPannelProps) {
-  const { activeId } = useSelectedTab();
   return (
     <>
       <p
         className={
-          leftPageToggle && activeId!="1.1.2.1"
+          leftPageToggle
             ? "flex flex-col w-6  items-center content-center mt-18 ml-5 pl-1 text-end overflow-y-hidden h-[calc(100vh-11vh)]"
             : "hidden w-6  justify-center items-center content-center mt-18 ml-5 pl-1 text-end"
         }

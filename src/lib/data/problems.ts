@@ -1,5 +1,11 @@
-// lib/data/problems.ts
-import { FaReact, FaTools, FaProjectDiagram, FaBriefcase, FaEnvelope, FaHome } from "react-icons/fa";
+import {
+  FaHome,
+  FaTools,
+  FaProjectDiagram,
+  FaBriefcase,
+  FaGraduationCap,
+  FaEnvelope,
+} from "react-icons/fa";
 import { Tab } from "@/context/selectedTabContext";
 
 export interface Problem {
@@ -18,8 +24,8 @@ export const problems: Problem[] = [
     fileName: "Home",
     filePath: "portfolio/src/Home",
     icon: FaHome,
-    message:" If you haven’t visited my Home page yet, click here to get an overview of who I am and what I do.",
-
+    message:
+      "If you haven’t explored the Home section yet, click here to get an overview of who I am and what I do.",
   },
   {
     id: "skills-problem",
@@ -28,8 +34,7 @@ export const problems: Problem[] = [
     filePath: "portfolio/src/Skills",
     icon: FaTools,
     message:
-          "If you haven’t explored my Skills yet, click here to see the tools and technologies I work with.",
-
+      "If you haven’t checked out my Skills yet, click here to see the tools and technologies I work with.",
   },
   {
     id: "projects-problem",
@@ -38,8 +43,7 @@ export const problems: Problem[] = [
     filePath: "portfolio/src/Projects",
     icon: FaProjectDiagram,
     message:
-          "If you haven’t checked my Projects, head over to see how I’ve applied these skills in real work.",
-
+      "If you haven’t seen my Projects yet, click here to explore how I’ve applied my skills to real-world work.",
   },
   {
     id: "experience-problem",
@@ -48,15 +52,24 @@ export const problems: Problem[] = [
     filePath: "portfolio/src/Experience",
     icon: FaBriefcase,
     message:
-          "If you haven’t gone through my Experience yet, check it out to learn more about my professional journey.",
+      "If you haven’t visited my Experience section yet, click here to learn more about my professional journey.",
+  },
+  {
+    id: "education-problem",
+    pageId: "1.1.5.1", // Education
+    fileName: "Education",
+    filePath: "portfolio/src/Education",
+    icon: FaGraduationCap,
+    message:
+      "If you haven’t reviewed my Education section yet, click here to know more about my academic background.",
   },
   {
     id: "contact-problem",
-    pageId: "1.1.5.1", // Contact
+    pageId: "1.1.6.1", // Contact
     fileName: "Contact",
     filePath: "portfolio/src/Contact",
     icon: FaEnvelope,
     message:
-      "If you haven’t reached out yet, don’t hesitate to drop me a message.",
+      "If you haven’t reached out yet, click here to visit my Contact section and get in touch with me.",
   },
 ];
