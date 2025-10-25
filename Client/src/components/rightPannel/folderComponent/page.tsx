@@ -4,8 +4,8 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { FaFolder } from "react-icons/fa6";
 import { FaFolderOpen } from "react-icons/fa6";
 
-import { useFolder } from "@/context/selectedFolderContext";
-import { useSelectedTab } from "@/context/selectedTabContext";
+import { useFolder } from "../../../context/selectedFolderContext";
+import { useSelectedTab } from "../../../context/selectedTabContext";
 import React from "react";
 
 interface FolderComponentProps {
