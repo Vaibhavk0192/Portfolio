@@ -14,84 +14,46 @@ export const projects: Project[] = [
     id: "retinoscan",
     title: "RetinoScan – Diabetic Retinopathy Detection",
     description:
-      "AI-powered system for detecting diabetic retinopathy with deep learning models and U-Net segmentation for lesions.",
+      "Developed an AI-powered platform for automated diabetic retinopathy detection using deep learning. Integrated InceptionV3 for classification and U-Net for precise lesion segmentation to deliver accurate diagnostic insights.",
     tech: ["Python", "TensorFlow", "InceptionV3", "U-Net", "React.js"],
-    image: "https://images2.imgbox.com/ab/cd/your_image1.png",
-    link: "https://retinoscan-demo.com",
+    image: "https://images2.imgbox.com/fc/7e/VA2OXKlG_o.png",
     github: "https://github.com/yourusername/retinoscan",
   },
   {
-    id: "video-streaming",
-    title: "Video Streaming Platform",
-    description:
-      "Full-stack platform for high-performance video streaming with Next.js and MongoDB, handling 10,000+ users.",
-    tech: ["Next.js", "MongoDB", "Vercel"],
-    image: "https://images2.imgbox.com/ef/gh/your_image2.png",
-    link: "https://video-platform-demo.com",
-    github: "https://github.com/yourusername/video-platform",
-  },
-  {
-    id: "banking-app",
-    title: "Banking Application",
-    description:
-      "Responsive banking app built with React and backend integration, improving user engagement and onboarding.",
-    tech: ["React", "Node.js", "Express"],
-    image: "https://images2.imgbox.com/ij/kl/your_image3.png",
-    github: "https://github.com/yourusername/banking-app",
-  },
-  {
     id: "netflix",
-    title: "Netflix Clone",
+    title: "Netflix Clone - Movie & Series Streaming Platform",
     description:
-      "Dive into the world of streaming with our Netflix clone, providing an immersive entertainment experience.",
-    tech: ["Next.js", "MongoDB", "Tailwind", "Prisma", "JavaScript"],
-    image: "https://images2.imgbox.com/mn/op/netflix.jpg",
+      "Engineered a full-stack streaming application replicating Netflix’s interface with secure authentication, dynamic content loading, and fully responsive design optimized for multi-device compatibility.",
+    tech: ["Next.js", "MongoDB", "Tailwind CSS", "Prisma", "JavaScript"],
+    image: "https://images2.imgbox.com/09/89/uqhjmYgL_o.jpg",
     link: "https://netflix-silk-ten.vercel.app",
-    github: undefined,
+    github: "https://github.com/yourusername/reeldeal",
+  },
+  {
+    id: "reeldeal",
+    title: "ReelDeal – Movie & Show Ticket Booking",
+    description:
+      "Built a ticket booking web platform enabling users to browse movies, check schedules, and book seats in real-time. Enhanced performance and user experience through optimized React components and REST API integration.",
+    tech: ["React.js", "Node.js", "Express", "MongoDB", "Figma"],
+    image: "https://images2.imgbox.com/77/79/kY53JuJm_o.png",
+    github: "https://github.com/yourusername/reeldeal",
   },
   {
     id: "urbane",
     title: "Urbane – E-commerce Clothing Platform",
     description:
-      "Shop for clothing and accessories online with secure payment and product management.",
-    tech: ["React.js", "MongoDB", "Javascript", "Figma"],
-    image: "https://images2.imgbox.com/qr/st/urbane.png",
-    link: undefined,
+      "Developed a responsive e-commerce web application for fashion and apparel with product management, payment integration, and interactive UI components to improve shopping experience and engagement.",
+    tech: ["React.js", "MongoDB", "JavaScript", "Figma"],
+    image: "https://images2.imgbox.com/d3/f9/gsL7VJk6_o.png",
     github: "https://github.com/Vaibhavk0192/Urbane",
   },
   {
     id: "recipath",
     title: "Recipath – AI Recipe Generator",
     description:
-      "Generate recipes based on keywords with AI; subscribe to newsletter for updates.",
-    tech: ["React.js", "MongoDB", "Javascript", "Python", "Figma"],
-    image: "https://images2.imgbox.com/uv/wx/recipath.png",
+      "Created an AI-driven web app that generates personalized recipes from user-input ingredients using NLP models. Designed a modern interface with subscription and search features for enhanced usability.",
+    tech: ["React.js", "MongoDB", "Python", "JavaScript", "Figma"],
+    image: "https://images2.imgbox.com/7d/dd/SzlIHfmT_o.png",
     github: "https://github.com/Vaibhavk0192/recipath",
-  },
-  {
-    id: "mom2b",
-    title: "Mom2B – Baby Movement Tracker",
-    description:
-      "Track baby movements and access manual guidance for the pregnancy period.",
-    tech: ["Flutter", "Firebase", "Figma"],
-    image: "https://images2.imgbox.com/yz/ab/mom2b.png",
-  },
-  {
-    id: "spotify",
-    title: "Spotify Clone",
-    description:
-      "Mobile app for music, podcasts, and audio content with personalized recommendations.",
-    tech: ["Flutter"],
-    image: "https://images2.imgbox.com/cd/ef/spotify.png",
-    github: "https://github.com/Vaibhavk0192/Spotify",
-  },
-  {
-    id: "punnya",
-    title: "Punnya – NGO Community App",
-    description:
-      "Connects people and NGOs; NGOs can post campaigns and collaborate with users.",
-    tech: ["Flutter", "Firebase"],
-    image: "https://images2.imgbox.com/gh/ij/punnya.png",
-    github: "https://github.com/Vaibhavk0192/punnya",
   },
 ];

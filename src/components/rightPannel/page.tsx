@@ -20,6 +20,7 @@ const RightPannel = () => {
             title={file.title}
             icon={file.icon === "folder" ? "folder" : "file"}
             children={file.children ?? []}
+            color={file.color}
           />
         ))}
       </div>

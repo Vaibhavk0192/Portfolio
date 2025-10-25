@@ -14,6 +14,7 @@ interface FolderComponentProps {
   icon: React.ElementType | string;
   children?: FolderComponentProps[];
   link?: string;
+  color: string;
 }
 
 const FolderComponent = ({
@@ -21,7 +22,7 @@ const FolderComponent = ({
   title,
   icon,
   children = [],
-  link,
+  color
 }: FolderComponentProps) => {
   const [isOpen, setIsOpen] = useState(true);
   const { openTab } = useSelectedTab();
@@ -32,14 +33,19 @@ const FolderComponent = ({
       setIsOpen((prev) => !prev);
     } else {
       setSelectedFile(title);
-
       if (typeof icon === "function") {
-        openTab({ id: id, title: title, icon: icon });
+        if(title==="resume.pdf"){
+          window.open('https://drive.google.com/file/d/1nniXZHKb_fdx__Z3hnFr9iBd6F3Dx4hO/view?usp=sharing', '_blank');
+        }
+        else{
+          openTab({ id: id, title: title, icon: icon });
+        }
       }
     }
   };
 
   const Icon = icon === "folder" ? (isOpen ? FaFolderOpen : FaFolder) : icon;
+
 
   return (
     <div className="pl-2 w-full ">
@@ -61,9 +67,8 @@ const FolderComponent = ({
           <span className="w-4 h-4 mr-1" /> // spacer for files
         )}
         <Icon
-          className={`mr-2 
-            ${icon === "folder" ? "text-text-gray" : "text-blue-400"}
-            `}
+          className="mr-2"
+          style={icon === "folder" ? undefined : { color: color ?? undefined }}
         />
         <span>{title}</span>
       </div>
@@ -77,6 +82,7 @@ const FolderComponent = ({
             icon={child.icon}
             children={child.children}
             link={child.link}
+            color={child.color}
           />
         ))}
     </div>
