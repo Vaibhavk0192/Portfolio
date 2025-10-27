@@ -7,11 +7,13 @@ import { FaFolderOpen } from "react-icons/fa6";
 import { useFolder } from "../../../context/selectedFolderContext";
 import { useSelectedTab } from "../../../context/selectedTabContext";
 import React from "react";
+import IconMap from "@/utils/IconsMap";
+
 
 interface FolderComponentProps {
   id: string;
   title: string;
-  icon: React.ElementType | string;
+  icon:string;
   children?: FolderComponentProps[];
   link?: string;
   color: string;
@@ -33,20 +35,18 @@ const FolderComponent = ({
       setIsOpen((prev) => !prev);
     } else {
       setSelectedFile(title);
-      if (typeof icon === "function") {
         if(title==="resume.pdf"){
           window.open('https://drive.google.com/file/d/1nniXZHKb_fdx__Z3hnFr9iBd6F3Dx4hO/view?usp=sharing', '_blank');
         }
         else{
-          openTab({ id: id, title: title, icon: icon });
+          openTab({ id: id, title: title});
         }
-      }
     }
   };
 
-  const Icon = icon === "folder" ? (isOpen ? FaFolderOpen : FaFolder) : icon;
 
-
+  const iconComponent=IconMap[title];
+  const Icon = icon === "folder" ? (isOpen ? FaFolderOpen : FaFolder) : iconComponent;
   return (
     <div className="pl-2 w-full ">
       <div

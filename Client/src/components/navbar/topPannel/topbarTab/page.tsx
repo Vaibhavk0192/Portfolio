@@ -14,6 +14,8 @@ function TopbarTab(topbarProps: topbarPropsType) {
   const { setSelectedFile } = useFolder();
   const isactive = activeId === topbarProps.id;
 
+  
+
   return (
     <div
       className={`h-8 py-1 text-xs text-gray-400  items-center  min-w-32 max-w-fit px-2 border-b-2 border-b-transparent hover:border-b-2 hover:border-b-highlight-green  border-r-[0.5px]

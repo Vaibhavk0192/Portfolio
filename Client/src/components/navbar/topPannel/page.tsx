@@ -17,6 +17,7 @@ import { logToTerminal } from "../../bottomScreen/logToTerminal/logToTerminal";
 import TopbarTab from "./topbarTab/page";
 import { useSelectedTab } from "@/context/selectedTabContext";
 import { usePanel } from "@/context/panelContext";
+import IconsMap from "@/utils/IconsMap";
 
 function TopPannel() {
   const {
@@ -90,7 +91,7 @@ function TopPannel() {
             key={tab.id}
             id={tab.id}
             title={tab.title}
-            icons={tab.icon}
+            icons={IconsMap[tab.title]}
           />
         ))}
       </div>

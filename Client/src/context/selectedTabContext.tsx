@@ -6,7 +6,6 @@ import React, { createContext, useContext, useReducer } from "react";
 export type Tab = {
   id: string;
   title: string;
-  icon: React.ElementType;
 };
 
 type State = {
@@ -20,7 +19,7 @@ type Action =
   | { type: "CLOSE_TAB"; id: string };
 
 const initialState: State = {
-  tabs: [{ id: "1.1.1.1", title: "Home", icon: FaReact }],
+  tabs: [{ id: "1.1.1.1", title: "Home" }],
   activeId: "1.1.1.1",
 };
 

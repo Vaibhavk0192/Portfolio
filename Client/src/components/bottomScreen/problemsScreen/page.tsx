@@ -3,6 +3,7 @@
 import { problems, Problem } from "@/lib/data/problems";
 import Problems from "./problems/page";
 import { useSelectedTab } from "@/context/selectedTabContext";
+import IconsMap from "@/utils/IconsMap";
 
 export default function ProblemsScreen() {
   const { tabs,openTab } = useSelectedTab();
@@ -16,7 +17,7 @@ export default function ProblemsScreen() {
         </div>
       ) : (
         activeProblems.map((problem: Problem) => (
-          <Problems key={problem.id} {...problem}/>
+          <Problems key={problem.id} {...problem} icon={IconsMap[problem.fileName]}/>
         ))
       )}
     </div>

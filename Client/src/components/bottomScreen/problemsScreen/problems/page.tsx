@@ -10,8 +10,8 @@ function Problems({
   pageId,
   fileName,
   filePath,
-  icon: Icon,
   message,
+  icon: Icon,
 }: Problem) {
   const [isOpen, setIsOpen] = useState(true);
   const { openTab, activeTab } = useSelectedTab();

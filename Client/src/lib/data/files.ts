@@ -1,12 +1,4 @@
-import {
-  FaBriefcase,
-  FaEnvelope,
-  FaHome,
-  FaProjectDiagram,
-  FaTools,
-  FaGraduationCap,
-  FaFilePdf,
-} from "react-icons/fa";
+
 
 export const files = [
   {
@@ -30,7 +22,6 @@ export const files = [
               {
                 id: "1.1.1.1",
                 title: "Home",
-                icon: FaHome,
                 color: "#60a5fa",
               },
             ],
@@ -44,7 +35,6 @@ export const files = [
               {
                 id: "1.1.2.1",
                 title: "Skills",
-                icon: FaTools,
                 color: "#60a5fa",
               },
             ],
@@ -58,7 +48,6 @@ export const files = [
               {
                 id: "1.1.3.1",
                 title: "Projects",
-                icon: FaProjectDiagram,
                 color: "#60a5fa",
               },
             ],
@@ -72,7 +61,6 @@ export const files = [
               {
                 id: "1.1.4.1",
                 title: "Experience",
-                icon: FaBriefcase,
                 color: "#60a5fa",
               },
             ],
@@ -86,7 +74,6 @@ export const files = [
               {
                 id: "1.1.5.1",
                 title: "Education",
-                icon: FaGraduationCap,
                 color: "#60a5fa",
               },
             ],
@@ -100,7 +87,6 @@ export const files = [
               {
                 id: "1.1.6.1",
                 title: "Contact",
-                icon: FaEnvelope,
                 color: "#60a5fa",
               },
             ],
@@ -114,7 +100,6 @@ export const files = [
               {
                 id: "1.1.7.1",
                 title: "resume.pdf",
-                icon: FaFilePdf,
                 color: "#f43f5e",
               },
             ],
