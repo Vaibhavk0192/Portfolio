@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HiSparkles } from "react-icons/hi";
 import { useSelectedTab } from "@/context/selectedTabContext";
 import { useFolder } from "@/context/selectedFolderContext";
+import IconsMap from "@/utils/IconsMap";
 
 function Problems({
   id: key,
@@ -21,7 +22,7 @@ function Problems({
   return (
     <div
       onClick={() => {
-        openTab({ id: pageId, title: fileName, icon: Icon });
+        openTab({ id: pageId, title: fileName });
         setSelectedFile(fileName);
       }}
     >
@@ -41,8 +42,7 @@ function Problems({
             }}
           />
         )}
-
-        <Icon className="text-cyan-400" />
+        {Icon && <Icon className="text-cyan-400" />}
         <p>{fileName}</p>
         <p className="text-gray-400">{filePath}</p>
       </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { FaReact } from "react-icons/fa";
 import React, { createContext, useContext, useReducer } from "react";
 
 export type Tab = {
@@ -19,8 +18,8 @@ type Action =
   | { type: "CLOSE_TAB"; id: string };
 
 const initialState: State = {
-  tabs: [{ id: "1.1.1.1", title: "Home" }],
-  activeId: "1.1.1.1",
+  tabs: [{ id: "1.1.1", title: "Home" }],
+  activeId: "1.1.1",
 };
 
 const intialCtx: Ctx = {

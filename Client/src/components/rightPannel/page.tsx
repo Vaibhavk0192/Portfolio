@@ -18,7 +18,7 @@ const RightPannel = () => {
             key={file.id}
             id={file.id}
             title={file.title}
-            icon={file.icon === "folder" ? "folder" : "file"}
+            icon={file.icon}
             children={file.children ?? []}
             color={file.color}
           />

@@ -8,16 +8,10 @@ import { useFolder } from "../../../context/selectedFolderContext";
 import { useSelectedTab } from "../../../context/selectedTabContext";
 import React from "react";
 import IconMap from "@/utils/IconsMap";
+import { FolderComponentProps } from "@/lib/data/files";
 
 
-interface FolderComponentProps {
-  id: string;
-  title: string;
-  icon:string;
-  children?: FolderComponentProps[];
-  link?: string;
-  color: string;
-}
+
 
 const FolderComponent = ({
   id,

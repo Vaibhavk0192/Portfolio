@@ -14,17 +14,17 @@ function Pages(bottomPannelToggle: { bottomPannelToggle: boolean }) {
   return (
     <div className={`pt-20 flex-1 min-w-[78.8vw]  overflow-y-scroll px-10 }`}>
       {activeId ? (
-        activeId === "1.1.1.1" ? (
+        activeId === "1.1.1" ? (
           <Home />
-        ) : activeId === "1.1.2.1" ? (
+        ) : activeId === "1.1.2" ? (
           <Skills />
-        ) : activeId === "1.1.3.1" ? (
+        ) : activeId === "1.1.3" ? (
           <Projects />
-        ) : activeId === "1.1.6.1" ? (
+        ) : activeId === "1.1.6" ? (
           <Contact />
-        ) : activeId === "1.1.5.1" ? (
+        ) : activeId === "1.1.5" ? (
           <Education />
-        ) : activeId === "1.1.4.1" ? (
+        ) : activeId === "1.1.4" ? (
           <ExperiencePage />
         ) : (
           <NoTabSelected />
