@@ -27,3 +27,5 @@ yarn-error.log*
 .env.production.local
 .next/cache/
 next.config.ts
+
+serviceAccountKey.json
