@@ -28,4 +28,18 @@ yarn-error.log*
 .next/cache/
 next.config.ts
 
+# service account keys (sensitive credentials)
 serviceAccountKey.json
+/Server/serviceAccountKey.json
+/Client/serviceAccountKey.json
+
+# local and build artifacts
+/.vs
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+**/.turbo
+**/dist
+**/build
+**/.cache
