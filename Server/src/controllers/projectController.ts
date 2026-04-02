@@ -15,7 +15,7 @@ export const createProject = async (
     const docRef = await addProject(data);
     res
       .status(201)
-      .json({ id: docRef.id, message: "Project added successfully" });
+      .json({ id: docRef, message: "Project added successfully" });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }

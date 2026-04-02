@@ -13,8 +13,8 @@ export const getAllEducation = async (): Promise<EducationInterface[]> => {
   const snapshot = await EducationModel.get();
   return snapshot.docs.map((doc: QueryDocumentSnapshot) => ({
     id: doc.id,
-    ...doc.data(),
-  })) as EducationInterface[];
+    ...(doc.data() as Omit<EducationInterface, 'id'>),
+  }));
 };
 
 export const deleteEducation = async (id: string): Promise<void> => {
