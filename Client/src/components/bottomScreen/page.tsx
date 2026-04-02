@@ -15,11 +15,11 @@ function Terminal({
   bottomPannelToggle,
   setBottomPannelToggle,
 }: TerminalProps) {
-  const [activeTab, setActiveTab] = React.useState("PROBLEMS");
+  const [activeTab, setActiveTab] = React.useState("EXPLORE");
   const [currentUrl, setCurrentUrl] = React.useState<string | null>(null);
   const { logs, setLogs } = useLogs();
   const [terminalFUllscreen, setTerminalFullscreen] = React.useState(false);
-  const tabs: string[] = ["PROBLEMS", "TERMINAL", " OUTPUT"];
+  const tabs: string[] = ["EXPLORE", "TERMINAL"];
 
   React.useEffect(() => {
     setCurrentUrl(window.location.href);
@@ -100,10 +100,13 @@ function Terminal({
           />
         </div>
       </div>
-      <div className="px-10 text-text text-xs overflow-y-scroll max-h-full h-full w-full">
-        {activeTab === "PROBLEMS" && <ProblemsScreen />}
+      <div className="px- text-text text-xs overflow-y-scroll max-h-full h-full w-full">
+        {activeTab === "EXPLORE" && <ProblemsScreen />}
         {activeTab === "TERMINAL" && (
-          <TerminalScreen currentUrl={currentUrl} logs={logs} />
+          <TerminalScreen
+            currentUrl={currentUrl}
+            logs={logs}
+          />
         )}
       </div>
     </div>

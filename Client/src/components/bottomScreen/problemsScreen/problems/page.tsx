@@ -1,5 +1,7 @@
+"use client"
+
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { Problem } from "@/lib/data/problems";
+import { Problem } from "@/lib/types/problems";
 import { useState } from "react";
 import { HiSparkles } from "react-icons/hi";
 import { useSelectedTab } from "@/context/selectedTabContext";
@@ -12,22 +14,24 @@ function Problems({
   fileName,
   filePath,
   message,
-  icon: Icon,
 }: Problem) {
   const [isOpen, setIsOpen] = useState(true);
   const { openTab, activeTab } = useSelectedTab();
-
   const { selectedFile, setSelectedFile } = useFolder();
+
+  const Icon = IconsMap[fileName] || HiSparkles;
+
+  const normalizedPageId = pageId.split(".").slice(0, 3).join(".");
 
   return (
     <div
       onClick={() => {
-        openTab({ id: pageId, title: fileName });
+        openTab({ id: normalizedPageId, title: fileName });
         setSelectedFile(fileName);
       }}
     >
       {/* top line with arrow, icon, filename + path */}
-      <div className="flex text-[0.8rem] items-center gap-2 ">
+      <div className="flex text-[0.8rem] items-center gap-2 px-5">
         {isOpen ? (
           <MdKeyboardArrowDown
             onClick={() => {

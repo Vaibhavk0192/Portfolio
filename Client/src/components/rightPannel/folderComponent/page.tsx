@@ -8,7 +8,7 @@ import { useFolder } from "../../../context/selectedFolderContext";
 import { useSelectedTab } from "../../../context/selectedTabContext";
 import React from "react";
 import IconMap from "@/utils/IconsMap";
-import { FolderComponentProps } from "@/lib/data/files";
+import { FolderComponentProps } from "@/lib/types/files";
 
 
 

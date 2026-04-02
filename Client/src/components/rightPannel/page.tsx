@@ -1,8 +1,37 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import FolderComponent from "./folderComponent/page";
-import { files } from "@/lib/data/files";
+import { FolderComponentProps } from "@/lib/types/files";
+
+async function getFiles() {
+  const res = await fetch("http://localhost:5000/api/files", {
+    next: { revalidate: 60 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch files");
+  }
+
+  return res.json();
+}
 
 const RightPannel = () => {
+  const [files, setFiles] = useState<FolderComponentProps[]>([]);
+
+  useEffect(() => {
+    const fetchFiles = async () => {
+      try {
+        const data = await getFiles();
+        setFiles(data);
+      } catch (error) {
+        console.error("Failed to fetch files:", error);
+      }
+    };
+    fetchFiles();
+  }, []);
+
   return (
     <div>
       <div className="flex flex-2 flex-col h-screen  min-w-fit] w-[18vw]  ml-auto z-5 relative shadow-sm shadow-bg pt-8">
