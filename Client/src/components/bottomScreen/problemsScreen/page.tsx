@@ -33,9 +33,10 @@ export default function ProblemsScreen() {
       try {
         const data = await getProblems();
         setProblems(data);
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.error("Failed to fetch problems:", error);
-        const statusCode = parseInt(error.message);
+        const message = error instanceof Error ? error.message : String(error);
+        const statusCode = parseInt(message);
         if (statusCode === 404) {
           setError({ type: 'not-found', statusCode: 404 });
         } else if (statusCode >= 500) {
@@ -73,7 +74,7 @@ export default function ProblemsScreen() {
             All Set!
           </h3>
           <p className="text-text text-sm max-w-md">
-            You've explored all the sections. Great job!
+            You&apos;ve explored all the sections. Great job!
           </p>
         </div>
       ) : (

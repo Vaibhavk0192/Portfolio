@@ -48,6 +48,7 @@ const RightPannel = () => {
             id={file.id}
             title={file.title}
             icon={file.icon}
+            // eslint-disable-next-line react/no-children-prop
             children={file.children ?? []}
             color={file.color}
           />

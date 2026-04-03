@@ -34,9 +34,10 @@ export default function EducationPage() {
     try {
       const education = await getEducation();
       setData(education);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Failed to fetch education:", error);
-      const statusCode = parseInt(error.message);
+      const message = error instanceof Error ? error.message : String(error);
+      const statusCode = parseInt(message);
       if (statusCode === 404) {
         setError({ type: 'not-found', statusCode: 404 });
       } else if (statusCode >= 500) {

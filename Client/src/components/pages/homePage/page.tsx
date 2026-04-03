@@ -46,9 +46,10 @@ function HomePage() {
     try {
       const homeData = await getHome();
       setData(homeData);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Failed to fetch home data:", error);
-      const statusCode = parseInt(error.message);
+      const message = error instanceof Error ? error.message : String(error);
+      const statusCode = parseInt(message);
       if (statusCode === 404) {
         setError({ type: 'not-found', statusCode: 404 });
       } else if (statusCode >= 500) {
@@ -96,12 +97,12 @@ function HomePage() {
             {/* Left Section - Text */}
         <div className="max-w-xl">
           <div className="pt-18 text-5xl text-white font-bold relative">
-            Hi, I'm Vaibhav Kapoor
+            Hi, I&apos;m Vaibhav Kapoor
           </div>
           <div className="pt-4 text-gray-300 leading-relaxed">
-            “I’m passionate about building scalable and user-friendly software.
+            &ldquo;I&apos;m passionate about building scalable and user-friendly software.
             With experience in full-stack development, quality assurance, and
-            AI-driven projects, I enjoy turning ideas into real-world
+            AI-driven projects, I&apos;ll enjoy turning ideas into real-world
             applications—whether through responsive web platforms, performance
             optimization, or seamless backend integration.”
           </div>

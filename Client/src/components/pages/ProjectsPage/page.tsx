@@ -32,9 +32,10 @@ export default function ProjectsPage() {
     try {
       const projects = await getProjects();
       setData(projects);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Failed to fetch projects:", error);
-      const statusCode = parseInt(error.message);
+      const message = error instanceof Error ? error.message : String(error);
+      const statusCode = parseInt(message);
       if (statusCode === 404) {
         setError({ type: 'not-found', statusCode: 404 });
       } else if (statusCode >= 500) {

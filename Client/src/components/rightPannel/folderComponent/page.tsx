@@ -74,6 +74,7 @@ const FolderComponent = ({
             id={child.id}
             title={child.title}
             icon={child.icon}
+            // eslint-disable-next-line react/no-children-prop
             children={child.children}
             link={child.link}
             color={child.color}
