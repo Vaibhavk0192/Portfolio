@@ -7,9 +7,10 @@ import { useSelectedTab } from "@/context/selectedTabContext";
 import IconsMap from "@/utils/IconsMap";
 import NotFoundPage from "../../pages/notFoundPage/page";
 import ServerErrorPage from "../../pages/serverErrorPage/page";
+import { apiFetch } from "@/lib/api";
 
 async function getProblems() {
-  const res = await fetch("http://localhost:5000/api/problems", {
+  const res = await apiFetch("/api/problems", {
     next: { revalidate: 60 },
   });
 

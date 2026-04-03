@@ -7,12 +7,13 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import NotFoundPage from "../notFoundPage/page";
 import ServerErrorPage from "../serverErrorPage/page";
+import { apiFetch } from "@/lib/api";
 
 export const delay = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
 async function getEducation() {
-  const res = await fetch("http://localhost:5000/api/education", {
+  const res = await apiFetch("/api/education", {
     next: { revalidate: 60 },
   });
 

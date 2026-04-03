@@ -8,9 +8,10 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import NotFoundPage from "../notFoundPage/page";
 import ServerErrorPage from "../serverErrorPage/page";
+import { apiFetch } from "@/lib/api";
 
 async function getContact() {
-  const res = await fetch("http://localhost:5000/api/contact", {
+  const res = await apiFetch("/api/contact", {
     next: { revalidate: 60 },
   });
 

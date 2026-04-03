@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import FolderComponent from "./folderComponent/page";
 import { FolderComponentProps } from "@/lib/types/files";
+import { apiFetch } from "@/lib/api";
 
 async function getFiles() {
-  const res = await fetch("http://localhost:5000/api/files", {
+  const res = await apiFetch("/api/files", {
     next: { revalidate: 60 },
   });
 
