@@ -1,6 +1,6 @@
 // app/projects/page.tsx
 import { useEffect, useState } from "react";
-import ProjectsList from "./ProjectList";
+import ProjectsList from "./ProjectsList";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import NotFoundPage from "../notFoundPage/page";
