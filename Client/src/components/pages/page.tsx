@@ -3,7 +3,7 @@ import { useSelectedTab } from "@/context/selectedTabContext";
 import Skills from "./skillsPage/page";
 import Contact from "./contactPage/page";
 import NoTabSelected from "./noTabSelectedPage/page";
-import Projects from "./projectsPage/page";
+import Projects from "./ProjectsPage/page";
 import ExperiencePage from "./experiencePage/page";
 import Education from "./educationPage/page";
 
