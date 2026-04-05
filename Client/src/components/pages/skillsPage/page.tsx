@@ -12,6 +12,14 @@ import { apiFetch } from "@/lib/api";
 export const delay = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
+// Cache for skills data
+const skillsCache = {
+  data: null as Section[] | null,
+  error: null as any,
+  isFetching: false,
+  hasFetched: false, // Track if we've ever successfully fetched
+};
+
 async function getSkills() {
   const res = await apiFetch("/api/skills", {
     next: { revalidate: 60 },
@@ -36,6 +44,9 @@ function Skills() {
     try {
       const skills = await getSkills();
       setData(skills);
+      skillsCache.data = skills;
+      skillsCache.error = null;
+      skillsCache.hasFetched = true; // Mark as successfully fetched
       if (skills.length > 0) {
         setActiveTab(skills[0].id || "");
       }
@@ -43,19 +54,41 @@ function Skills() {
       console.error("Failed to fetch skills:", error);
       const message = error instanceof Error ? error.message : String(error);
       const statusCode = parseInt(message);
+      let errorObj: { type: 'not-found' | 'server-error'; statusCode?: number } | null = null;
       if (statusCode === 404) {
-        setError({ type: 'not-found', statusCode: 404 });
+        errorObj = { type: 'not-found', statusCode: 404 };
       } else if (statusCode >= 500) {
-        setError({ type: 'server-error', statusCode });
+        errorObj = { type: 'server-error', statusCode };
       } else {
-        setError({ type: 'server-error', statusCode: 500 });
+        errorObj = { type: 'server-error', statusCode: 500 };
       }
+      setError(errorObj);
+      skillsCache.error = errorObj;
     }
     setLoading(false);
   };
 
   useEffect(() => {
-    fetchData();
+    // If we already have cached data, use it immediately
+    if (skillsCache.data) {
+      setData(skillsCache.data);
+      setError(skillsCache.error);
+      if (skillsCache.data.length > 0) {
+        setActiveTab(skillsCache.data[0].id || "");
+      }
+      setLoading(false);
+      return;
+    }
+
+    // Prevent multiple simultaneous fetch requests - use global flag
+    if (skillsCache.isFetching || skillsCache.hasFetched) {
+      return;
+    }
+
+    skillsCache.isFetching = true;
+    fetchData().then(() => {
+      skillsCache.isFetching = false;
+    });
   }, []);
 
   if (error) {

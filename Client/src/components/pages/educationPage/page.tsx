@@ -12,6 +12,14 @@ import { apiFetch } from "@/lib/api";
 export const delay = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
+// Cache for education data
+const educationCache = {
+  data: null as EducationInterface[] | null,
+  error: null as any,
+  isFetching: false,
+  hasFetched: false, // Track if we've ever successfully fetched
+};
+
 async function getEducation() {
   const res = await apiFetch("/api/education", {
     next: { revalidate: 60 },
@@ -35,23 +43,45 @@ export default function EducationPage() {
     try {
       const education = await getEducation();
       setData(education);
+      educationCache.data = education;
+      educationCache.error = null;
+      educationCache.hasFetched = true; // Mark as successfully fetched
     } catch (error: unknown) {
       console.error("Failed to fetch education:", error);
       const message = error instanceof Error ? error.message : String(error);
       const statusCode = parseInt(message);
+      let errorObj: { type: 'not-found' | 'server-error'; statusCode?: number } | null = null;
       if (statusCode === 404) {
-        setError({ type: 'not-found', statusCode: 404 });
+        errorObj = { type: 'not-found', statusCode: 404 };
       } else if (statusCode >= 500) {
-        setError({ type: 'server-error', statusCode });
+        errorObj = { type: 'server-error', statusCode };
       } else {
-        setError({ type: 'server-error', statusCode: 500 });
+        errorObj = { type: 'server-error', statusCode: 500 };
       }
+      setError(errorObj);
+      educationCache.error = errorObj;
     }
     setLoading(false);
   };
 
   useEffect(() => {
-    fetchData();
+    // If we already have cached data, use it immediately
+    if (educationCache.data) {
+      setData(educationCache.data);
+      setError(educationCache.error);
+      setLoading(false);
+      return;
+    }
+
+    // Prevent multiple simultaneous fetch requests - use global flag
+    if (educationCache.isFetching || educationCache.hasFetched) {
+      return;
+    }
+
+    educationCache.isFetching = true;
+    fetchData().then(() => {
+      educationCache.isFetching = false;
+    });
   }, []);
 
   if (error) {

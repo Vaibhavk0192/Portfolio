@@ -19,7 +19,39 @@ function Terminal({
   const [currentUrl, setCurrentUrl] = React.useState<string | null>(null);
   const { logs, setLogs } = useLogs();
   const [terminalFUllscreen, setTerminalFullscreen] = React.useState(false);
+  const [height, setHeight] = React.useState(192); // Default height in pixels
+  const [isResizing, setIsResizing] = React.useState(false);
   const tabs: string[] = ["EXPLORE", "TERMINAL"];
+
+  const handleMouseDown = React.useCallback((e: React.MouseEvent) => {
+    setIsResizing(true);
+    e.preventDefault();
+  }, []);
+
+  const handleMouseMove = React.useCallback((e: MouseEvent) => {
+    if (!isResizing) return;
+    const newHeight = window.innerHeight - e.clientY;
+    const minHeight = 100;
+    const maxHeight = window.innerHeight - 100;
+    if (newHeight >= minHeight && newHeight <= maxHeight) {
+      setHeight(newHeight);
+    }
+  }, [isResizing]);
+
+  const handleMouseUp = React.useCallback(() => {
+    setIsResizing(false);
+  }, []);
+
+  React.useEffect(() => {
+    if (isResizing) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      };
+    }
+  }, [isResizing, handleMouseMove, handleMouseUp]);
 
   React.useEffect(() => {
     setCurrentUrl(window.location.href);
@@ -48,12 +80,27 @@ function Terminal({
       className={
         bottomPannelToggle
           ? terminalFUllscreen
-            ? "fixed top-8 z-10 mt-auto h-screen bg-secondary-bg flex animate-[slideUp_0.2s_ease-out_forwards] ease-in-out duration-300  w-full"
-            : "h-48 fixed bottom-0 w-full bg-secondary-bg flex animate-[slideUp_0.2s_ease-out_forwards] ease-in-out duration-300 mt-auto z-10"
+            ? "fixed top-8 z-10 mt-auto h-screen bg-secondary-bg flex animate-[slideUp_0.2s_ease-out_forwards] ease-in-out duration-300  w-full flex-col"
+            : "fixed bottom-0 w-full bg-secondary-bg flex mt-auto z-10 flex-col"
           : "hidden"
       }
+      style={!terminalFUllscreen ? { height: `${height}px` } : {}}
     >
-      <div className=" flex mt-auto items-center fixed h-8 w-full bg-[var(--bg)] pl-10 pr-4 text-sm border-t-1 border-secondary-bg shadow-t-2xl shadow-amber-50">
+      {/* Resize handle - positioned at the top of the terminal */}
+      {!terminalFUllscreen && (
+        <div
+          className={`absolute left-0 right-0 cursor-n-resize transition-colors z-40 ${
+            isResizing && 'bg-bg'
+          }`}
+          style={{
+            top: '-4px',
+            height: '8px',
+            userSelect: 'none'
+          }}
+          onMouseDown={handleMouseDown}
+        />
+      )}
+      <div className="flex mt-auto items-center h-10 w-full bg-[var(--bg)] pl-10 pr-4 text-sm border-t-1 border-secondary-bg shadow-t-2xl shadow-amber-50">
         <div className="flex-grow flex">
           {tabs.map((tab: string) => (
             <p

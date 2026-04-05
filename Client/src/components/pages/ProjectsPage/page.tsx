@@ -10,6 +10,14 @@ import { apiFetch } from "@/lib/api";
 export const delay = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
+// Cache for projects data
+const projectsCache = {
+  data: null as any,
+  error: null as any,
+  isFetching: false,
+  hasFetched: false, // Track if we've ever successfully fetched
+};
+
 async function getProjects() {
   const res = await apiFetch("/api/projects", {
     next: { revalidate: 60 },
@@ -33,23 +41,45 @@ export default function ProjectsPage() {
     try {
       const projects = await getProjects();
       setData(projects);
+      projectsCache.data = projects;
+      projectsCache.error = null;
+      projectsCache.hasFetched = true; // Mark as successfully fetched
     } catch (error: unknown) {
       console.error("Failed to fetch projects:", error);
       const message = error instanceof Error ? error.message : String(error);
       const statusCode = parseInt(message);
+      let errorObj: { type: 'not-found' | 'server-error'; statusCode?: number } | null = null;
       if (statusCode === 404) {
-        setError({ type: 'not-found', statusCode: 404 });
+        errorObj = { type: 'not-found', statusCode: 404 };
       } else if (statusCode >= 500) {
-        setError({ type: 'server-error', statusCode });
+        errorObj = { type: 'server-error', statusCode };
       } else {
-        setError({ type: 'server-error', statusCode: 500 });
+        errorObj = { type: 'server-error', statusCode: 500 };
       }
+      setError(errorObj);
+      projectsCache.error = errorObj;
     }
     setLoading(false);
   };
 
   useEffect(() => {
-    fetchData();
+    // If we already have cached data, use it immediately
+    if (projectsCache.data) {
+      setData(projectsCache.data);
+      setError(projectsCache.error);
+      setLoading(false);
+      return;
+    }
+
+    // Prevent multiple simultaneous fetch requests - use global flag
+    if (projectsCache.isFetching || projectsCache.hasFetched) {
+      return;
+    }
+
+    projectsCache.isFetching = true;
+    fetchData().then(() => {
+      projectsCache.isFetching = false;
+    });
   }, []);
 
   if (error) {

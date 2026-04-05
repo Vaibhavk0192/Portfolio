@@ -6,6 +6,13 @@ import FolderComponent from "./folderComponent/page";
 import { FolderComponentProps } from "@/lib/types/files";
 import { apiFetch } from "@/lib/api";
 
+// Cache for files data
+const filesCache = {
+  data: null as FolderComponentProps[] | null,
+  isFetching: false,
+  hasFetched: false, // Track if we've ever successfully fetched
+};
+
 async function getFiles() {
   const res = await apiFetch("/api/files", {
     next: { revalidate: 60 },
@@ -22,14 +29,31 @@ const RightPannel = () => {
   const [files, setFiles] = useState<FolderComponentProps[]>([]);
 
   useEffect(() => {
+    // If we already have cached data, use it immediately
+    if (filesCache.data) {
+      setFiles(filesCache.data);
+      return;
+    }
+
+    // Prevent multiple simultaneous fetch requests - use global flag
+    if (filesCache.isFetching || filesCache.hasFetched) {
+      return;
+    }
+
     const fetchFiles = async () => {
+      filesCache.isFetching = true;
       try {
         const data = await getFiles();
         setFiles(data);
+        filesCache.data = data;
+        filesCache.hasFetched = true; // Mark as successfully fetched
       } catch (error) {
         console.error("Failed to fetch files:", error);
+      } finally {
+        filesCache.isFetching = false;
       }
     };
+
     fetchFiles();
   }, []);
 
